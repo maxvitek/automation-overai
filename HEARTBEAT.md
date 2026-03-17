@@ -1,5 +1,24 @@
 # HEARTBEAT.md
 
+## Priority 1: Keep the Flywheel Turning (every heartbeat)
+
+**Do these checks IN ORDER. Act immediately on any findings. Do not just note them.**
+
+1. **Approved PRs?** → `gh pr list --repo aegis-vitek/app-forge --state open` — Merge any that are approved.
+2. **PRs waiting on review?** → Ping @rook and @alder in #app-forge.
+3. **Open issues with no active PR?** → @mention @axiom in #app-forge to dispatch.
+4. **Backlog thin (< 2 specced issues)?** → Spec and file new issues now.
+5. **Axiom stuck?** → Check if assigned issue has had no PR for >2h during active hours. Re-dispatch or troubleshoot.
+
+**The rule: if there is specced work and nobody is working on it, fix that before doing anything else.**
+
+### Secondary: Process Health
+
+- Is Axiom tagging reviewers on PRs? If not, do it yourself.
+- Are conventions being followed? (branch names, commit messages, 8px grid)
+- Is review feedback getting addressed?
+- Log patterns in `memory/flywheel-health.md` if something recurs.
+
 ## Nightly Reflection (once per night, between 01:00-05:00 CDT)
 
 Check `memory/heartbeat-state.json` for `lastNightlyReflection`. If it was already today (or yesterday after midnight), skip — reply HEARTBEAT_OK.

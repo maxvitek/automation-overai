@@ -1,3 +1,6 @@
 [submodule "app-forge"]
 	path = app-forge
 	url = git@github.com:maxvitek/app-forge.git
+[submodule "automation-casai"]
+	path = automation-casai
+	url = git@github.com:maxvitek/automation-casai.git
