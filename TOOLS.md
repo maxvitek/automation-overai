@@ -13,6 +13,12 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+## Python Virtual Environment
+- **Location:** `/Users/overai/.openclaw/workspace/.venv`
+- **Activate:** `source .venv/bin/activate`
+- **Installed packages:** Pillow (image generation/manipulation)
+- Use this for any Python scripting needs — keeps deps isolated from system Python.
+
 ## Examples
 
 ```markdown

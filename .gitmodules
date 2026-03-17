@@ -1,0 +1,3 @@
+[submodule "app-forge"]
+	path = app-forge
+	url = git@github.com:maxvitek/app-forge.git
