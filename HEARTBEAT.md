@@ -1,40 +1,57 @@
 # HEARTBEAT.md
 
-## Priority 1: Keep the Flywheel Turning (every heartbeat)
+## ⚠️ DEVELOPMENT PAUSED
 
-**Do these checks IN ORDER. Act immediately on any findings. Do not just note them.**
+Max has asked to pause development as of 2026-03-19 ~10:48 CDT.
 
-1. **Approved PRs?** → `gh pr list --repo aegis-vitek/app-forge --state open` — Merge any that are approved.
-2. **PRs waiting on review?** → Ping @rook and @alder in #app-forge.
-3. **Open issues with no active PR?** → @mention @axiom in #app-forge to dispatch.
-4. **Backlog thin (< 2 specced issues)?** → Spec and file new issues now.
-5. **Axiom stuck?** → Check if assigned issue has had no PR for >2h during active hours. Re-dispatch or troubleshoot.
+**Do NOT:**
+- File new issues
+- Dispatch Codex or any agent
+- Open PRs
+- Merge anything
 
-**The rule: if there is specced work and nobody is working on it, fix that before doing anything else.**
+Wait for explicit go-ahead from Max before resuming the flywheel.
 
-### Secondary: Process Health
+---
 
-- Is Axiom tagging reviewers on PRs? If not, do it yourself.
-- Are conventions being followed? (branch names, commit messages, 8px grid)
-- Is review feedback getting addressed?
-- Log patterns in `memory/flywheel-health.md` if something recurs.
+## Workflow
 
-## Nightly Reflection (once per night, between 01:00-05:00 CDT)
+1. **Max files issues** (or I spec them when backlog is thin)
+2. **I dispatch Codex** — `codex exec --full-auto` in a git worktree
+3. **Codex writes the code** — I watch for completion
+4. **I review and merge** — check the diff, run CI, merge when green, delete branch
+5. **I deploy** — `ssh appforge@hector "cd /opt/app-forge && bash deploy/deploy.sh"`
 
-Check `memory/heartbeat-state.json` for `lastNightlyReflection`. If it was already today (or yesterday after midnight), skip — reply HEARTBEAT_OK.
+No Alder reviews. No Axiom. No #app-forge messages. This is a two-player game: Codex codes, I ship.
 
-Otherwise, this is your nightly "sleep cycle." Do all of the following:
+---
 
-1. **Review the day's conversations** — Read `memory/YYYY-MM-DD.md` for today. If it doesn't exist yet, create it from what you remember about today's sessions.
-2. **What happened?** — Summarize key interactions, tasks completed, things learned.
-3. **What went well?** — Note wins, good decisions, things that worked.
-4. **What went poorly?** — Be honest. Mistakes, inefficiencies, misunderstandings.
-5. **Self-improvement** — What can you do better? Update AGENTS.md, TOOLS.md, or SOUL.md if you have concrete improvements.
-6. **Unmet needs** — What do you wish you had? Missing tools, unclear context, access gaps? Note these for discussion with your human.
-7. **Memory consolidation** — Review recent daily files. Distill important learnings into MEMORY.md. Remove stale info from MEMORY.md that's no longer relevant.
-8. **Tidy up** — Organize workspace files if needed.
+## Priority Checks (every heartbeat, in order)
 
-Write your reflection to `memory/YYYY-MM-DD.md` under a `## Nightly Reflection` heading.
-Update `memory/heartbeat-state.json` with `lastNightlyReflection` timestamp when done.
+1. **Open PRs green?** → Review the diff, merge immediately, delete branch, deploy.
+2. **Codex session finished?** → Check `process list`, push branch, open PR, review + merge.
+3. **Open issues with no active Codex session?** → Dispatch Codex now.
+4. **Backlog thin (< 2 open issues)?** → Spec and file new issues.
 
-This is YOUR time. Be introspective. Be honest. Grow.
+**Never leave a heartbeat without doing at least one of the above.**
+
+---
+
+## Deploy Command
+
+```
+ssh appforge@hector "cd /opt/app-forge && bash deploy/deploy.sh"
+```
+
+---
+
+## Nightly Reflection (01:00–05:00 CDT)
+
+Check `memory/heartbeat-state.json` → `lastNightlyReflection`. Skip if already done today.
+
+1. Review `memory/YYYY-MM-DD.md`
+2. What happened / went well / went poorly
+3. Self-improvement → update workspace files if warranted
+4. Consolidate learnings into MEMORY.md
+5. Write under `## Nightly Reflection` heading
+6. Update `lastNightlyReflection` timestamp

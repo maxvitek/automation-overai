@@ -1,4 +1,11 @@
 {
-  "lastNightlyReflection": "2026-03-17T01:24:00-05:00",
-  "lastChecks": {}
+  "lastChecks": {
+    "email": null,
+    "calendar": null,
+    "weather": null
+  },
+  "lastNightlyReflection": 1742450880,
+  "activeCodexSessions": {},
+  "lastDeploy": "fb6db70",
+  "lastDeployAt": "2026-03-20T05:08:00Z"
 }
