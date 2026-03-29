@@ -1,10 +1,10 @@
 {
   "lastChecks": {
-    "email": null,
-    "calendar": null,
+    "email": 1774734504,
+    "calendar": 1774734504,
     "weather": null
   },
-  "lastNightlyReflection": 1742450880,
+  "lastNightlyReflection": 1774678680,
   "activeCodexSessions": {},
   "lastDeploy": "fb6db70",
   "lastDeployAt": "2026-03-20T05:08:00Z"
