@@ -1,11 +1,12 @@
 {
   "lastChecks": {
-    "email": 1774734504,
-    "calendar": 1774734504,
+    "email": 1774786712,
+    "calendar": 1774786712,
     "weather": null
   },
-  "lastNightlyReflection": 1774678680,
+  "lastNightlyReflection": 1774761499,
   "activeCodexSessions": {},
   "lastDeploy": "fb6db70",
-  "lastDeployAt": "2026-03-20T05:08:00Z"
+  "lastDeployAt": "2026-03-20T05:08:00Z",
+  "notes": "Gmail session expired as of 2026-03-29 07:18 CDT — needs re-authentication by Max"
 }
